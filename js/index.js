@@ -6,6 +6,8 @@ const siteContent = { //JSON
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
+    "nav-item-7": "Feedback",
+    "nav-item-8": "Press",
     "img-src": "img/logo.png"
   },
   "cta": {
@@ -38,77 +40,76 @@ const siteContent = { //JSON
 };
 
 
-
-var nav7 = document.createElement('a');
-nav7.setAttribute('href', '#');
-
-var nav8 = document.createElement('a');
-nav8.setAttribute('href', '#');
-
-const nav = document.querySelector('nav');
-
-nav.appendChild(nav7);
-nav.prepend(nav8);
-
-
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
-
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 //Get all the elements with image tag
 const imageCollection = document.getElementsByTagName('img');
 // HTMLCollection(3) [img#logo-img.logo, img#cta-img, img#middle-img.middle-img, logo-img: img#logo-img.logo, cta-img: img#cta-img, middle-img: img#middle-img.middle-img]
 
-//Get the list of nodes matching a
-const aCollection = document.querySelectorAll('a');
-
-
+//Update all the images
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
 
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
-aCollection[0].textContent = "Services";
-aCollection[1].textContent = "Product";
-aCollection[2].textContent = "Vision";
-aCollection[3].textContent = "Features";
-aCollection[4].textContent = "About";
-aCollection[5].textContent = "Contact";
-aCollection[6].textContent = "Feedback";
-aCollection[7].textContent = "Press";
 
-let h1Updated = document.getElementsByTagName('h1');
-h1Updated[0].textContent = "DOM Is Awesome";
+//Create two more elements 
+var nav7 = document.createElement('a');
+var nav8 = document.createElement('a');
 
-let buttonUpdated = document.getElementsByTagName('button');
-buttonUpdated[0].textContent = "Get Started";
+nav7.setAttribute('href', '#');
+nav8.setAttribute('href', '#');
+
+const nav = document.querySelector('nav');
+
+//Add them to nav
+nav.appendChild(nav7);
+nav.prepend(nav8);
+
+//Get the the collection of nodes matching a
+const aCollection = document.querySelectorAll('a');
+
+for(let item =0; item < aCollection.length; item++){
+	aCollection[item].textContent = siteContent['nav']['nav-item-'+item];
+}
+
+nav8.textContent = siteContent['nav']['nav-item-8'];
 
 
-let h4Updated = document.getElementsByTagName('h4');
-h4Updated[0].textContent = "Features";
-h4Updated[1].textContent = "About";
-h4Updated[2].textContent = "Services";
-h4Updated[3].textContent = "Product";
-h4Updated[4].textContent = "Vision";
-h4Updated[5].textContent = "Contact";
+const h1Updated = document.getElementsByTagName('h1');
+h1Updated[0].textContent = siteContent['cta']['h1'];
+
+const buttonUpdated = document.getElementsByTagName('button');
+buttonUpdated[0].textContent = siteContent['cta']['button'];
+
+
+const h4Updated = document.getElementsByTagName('h4');
+h4Updated[0].textContent = siteContent['main-content']["features-h4"];
+h4Updated[1].textContent = siteContent['main-content']["about-h4"];
+h4Updated[2].textContent = siteContent['main-content']["services-h4"];
+h4Updated[3].textContent = siteContent['main-content']["product-h4"];
+h4Updated[4].textContent = siteContent['main-content']["vision-h4"];
+h4Updated[5].textContent = siteContent['contact']["contact-h4"];
 
 let pUpdated = document.getElementsByTagName('p');
-pUpdated[0].textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-pUpdated[1].textContent = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-pUpdated[2].textContent = "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-pUpdated[3].textContent = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-pUpdated[4].textContent = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-pUpdated[5].textContent = "123 Way 456 Street Somewhere, USA";
-pUpdated[6].textContent = "1 (888) 888-8888";
-pUpdated[7].textContent = "sales@greatidea.io";
-pUpdated[8].textContent = "Copyright Great Idea! 2018";
+pUpdated[0].textContent = siteContent['main-content']["features-content"];
+pUpdated[1].textContent = siteContent['main-content']["about-content"];
+pUpdated[2].textContent = siteContent['main-content']["services-content"];
+pUpdated[3].textContent = siteContent['main-content']["product-content"]
+pUpdated[4].textContent = siteContent['main-content']["vision-content"];
+pUpdated[5].textContent = siteContent['contact']["address"];
+pUpdated[6].textContent = siteContent['contact']["phone"];
+pUpdated[7].textContent = siteContent['contact']["email"];
+pUpdated[8].textContent = siteContent['footer']["copyright"];
+
 
 
 let arrayACollection = Array.from(aCollection);
 for (let i =0; i < arrayACollection.length; i++){
-	arrayACollection[i].style.color = 'green';
+	arrayACollection[i].style.color = 'blue';
 }
 
 
