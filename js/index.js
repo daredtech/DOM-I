@@ -37,6 +37,20 @@ const siteContent = { //JSON
   },
 };
 
+
+
+var nav7 = document.createElement('a');
+nav7.setAttribute('href', '#');
+
+var nav8 = document.createElement('a');
+nav8.setAttribute('href', '#');
+
+const nav = document.querySelector('nav');
+
+nav.appendChild(nav7);
+nav.prepend(nav8);
+
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -56,14 +70,14 @@ ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
-
 aCollection[0].textContent = "Services";
 aCollection[1].textContent = "Product";
 aCollection[2].textContent = "Vision";
 aCollection[3].textContent = "Features";
 aCollection[4].textContent = "About";
 aCollection[5].textContent = "Contact";
-
+aCollection[6].textContent = "Feedback";
+aCollection[7].textContent = "Press";
 
 let h1Updated = document.getElementsByTagName('h1');
 h1Updated[0].textContent = "DOM Is Awesome";
@@ -96,5 +110,9 @@ let arrayACollection = Array.from(aCollection);
 for (let i =0; i < arrayACollection.length; i++){
 	arrayACollection[i].style.color = 'green';
 }
+
+
+
+
 
 
