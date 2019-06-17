@@ -92,4 +92,9 @@ pUpdated[7].textContent = "sales@greatidea.io";
 pUpdated[8].textContent = "Copyright Great Idea! 2018";
 
 
+let arrayACollection = Array.from(aCollection);
+for (let i =0; i < arrayACollection.length; i++){
+	arrayACollection[i].style.color = 'green';
+}
+
 
